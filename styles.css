@@ -14,9 +14,16 @@ body{
 }
 .dice-container{
     background : linear-gradient(135deg, #3A0CA3, #867BE2, #7209B7);
-    width: 650px;
+    width: 90%;               
+    max-width: 650px;        
     border-radius: 20px;
-    /* height: 400px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
 h1 {
