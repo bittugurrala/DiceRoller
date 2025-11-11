@@ -1,31 +1,60 @@
 let roll = document.getElementById("rollButton");
 let para = document.getElementById("para");
 let diceContainer = document.getElementById("diceContainer");
+let display = document.getElementById("value")
 
-// 1️⃣ When page loads, fade in the paragraph
-window.addEventListener("load", function() {
-  para.classList.add("show");
+let faces = {
+    1 : "Dice_images/One_face.png",
+    2 : "Dice_images/Two_face.png",
+    3 : "Dice_images/Three_face.png",
+    4 : "Dice_images/Four_face.png",
+    5 : "Dice_images/Five_face.png",
+    6 : "Dice_images/Six_face.png"
+};
+
+//Show intro text smoothly on page load
+window.addEventListener("load", function () {
+  setTimeout(() => {
+    para.classList.add("show");
+  }, 50);
 });
 
-roll.addEventListener("click", function() {
-  // 2️⃣ Fade out the paragraph smoothly
-  para.classList.add("hide");
+roll.addEventListener("click", function () {
+  // 🎬 Fade out paragraph
+  para.classList.remove("show");
 
-  // 3️⃣ After fade-out completes (0.6s), replace content with animation
+  // ⏳ After fade-out (0.6s), show dice animation
   setTimeout(() => {
     diceContainer.innerHTML = `
-      <iframe id="animation"
+    <iframe id="animation"
         class="show"
         src="https://lottie.host/embed/bb25034b-41ea-4de8-9a84-5edd9ce91785/GF9M9vSDg9.lottie"
-        width="200" height="200" frameborder="0">
-      </iframe>
+        width="200"
+        height="200"
+        frameborder="0">
+    </iframe>
     `;
 
-    // 4️⃣ Fade in the animation after a slight delay
     const iframe = document.getElementById("animation");
     iframe.style.opacity = "0";
+
     setTimeout(() => {
       iframe.style.opacity = "1";
+    }, 50);
+
+    // After animation (~2.5 seconds), show dice result
+    setTimeout(() => {
+      const random = Math.floor(Math.random() * 6) + 1; // random number 1–6
+      diceContainer.innerHTML = `
+        <img src="${faces[random]}" width="150" class="fade show size" alt="dice-${random}">`;
+        display.textContent = `Dice value is ${random}`;
+        // ✨ Smooth fade-in for final dice
+        const finalDice = document.getElementById("finalDice");
+        setTimeout(() => {
+            finalDice.classList.add("show");
+        }, 100); // tiny delay for transition to trigger
+        }, 2500);
+
     }, 100);
-  }, 600); // matches fade-out duration
-});
+  }, 100);
+

@@ -9,10 +9,14 @@ body{
     min-height: 100vh;
 
 }
+.btn{
+    border: 0px
+}
 .dice-container{
     background : linear-gradient(135deg, #3A0CA3, #867BE2, #7209B7);
     width: 650px;
     border-radius: 20px;
+    /* height: 400px; */
 }
 
 h1 {
@@ -45,4 +49,25 @@ iframe {
 
 iframe.show {
   opacity: 1;
+}
+/* .size {
+    width: 91px;
+    margin-top: 79px; 
+    margin-bottom: 10px;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out; 
+} */
+
+/* When shown */
+.size.show {
+  opacity: 1;
+  width: 100px;
+}
+
+/* Optional helper: centers image perfectly */
+.dice-face-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
