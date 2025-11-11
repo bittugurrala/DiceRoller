@@ -11,13 +11,15 @@
     <div class="container d-flex justify-content-center align-items-center">
         <div class = "dice-container shadow text-center mt-5 p-4">
             <h1 class = "heading">Dice Roller</h1>
-            <p class = "para" id = "para">Click the button to roll the dice</p>
-            <div class ="dice m-3" id = "dice">
-                <iframe src="https://lottie.host/embed/bb25034b-41ea-4de8-9a84-5edd9ce91785/GF9M9vSDg9.lottie"></iframe>
+            
+            <div class ="dice m-3" id = "diceContainer">
+                <p class = "para fade" id = "para">Click the button to roll the dice</p>
+                <!-- <iframe id = "animation" src="https://lottie.host/embed/bb25034b-41ea-4de8-9a84-5edd9ce91785/GF9M9vSDg9.lottie"></iframe> -->
             </div>
-            <button class="btn btn-primary">Roll</button>
+            <button class="btn btn-primary" id = "rollButton">Roll</button>
 
         </div>
     </div>
+    <script src="javascripts.js"></script>
 </body>
 </html>
