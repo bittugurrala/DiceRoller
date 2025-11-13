@@ -4,12 +4,12 @@ let diceContainer = document.getElementById("diceContainer");
 let display = document.getElementById("value")
 
 let faces = {
-    1 : "Dice_images/One_face.png",
-    2 : "Dice_images/Two_face.png",
-    3 : "Dice_images/Three_face.png",
-    4 : "Dice_images/Four_face.png",
-    5 : "Dice_images/Five_face.png",
-    6 : "Dice_images/Sixx_face.png"
+    1 : "./Dice_images/One_face.png",
+    2 : "./Dice_images/Two_face.png",
+    3 : "./Dice_images/Three_face.png",
+    4 : "./Dice_images/Four_face.png",
+    5 : "./Dice_images/Five_face.png",
+    6 : "./Dice_images/Sixx_face.png"
 };
 
 //Show intro text smoothly on page load
