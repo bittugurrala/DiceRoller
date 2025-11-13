@@ -4,12 +4,12 @@ let diceContainer = document.getElementById("diceContainer");
 let display = document.getElementById("value")
 
 let faces = {
-    1 : "./Dice_images/One_face.png",
-    2 : "./Dice_images/Two_face.png",
-    3 : "./Dice_images/Three_face.png",
-    4 : "./Dice_images/Four_face.png",
-    5 : "./Dice_images/Five_face.png",
-    6 : "./Dice_images/Sixx_face.png"
+    0 : "./Dice_images/One_face.png",
+    1 : "./Dice_images/Two_face.png",
+    2 : "./Dice_images/Three_face.png",
+    3 : "./Dice_images/Four_face.png",
+    4 : "./Dice_images/Five_face.png",
+    5 : "./Dice_images/Six_face.png"
 };
 
 //Show intro text smoothly on page load
@@ -23,7 +23,7 @@ roll.addEventListener("click", function () {
   // Fade out paragraph
   para.classList.remove("show");
 
-  // ⏳ After fade-out (0.6s), show dice animation
+  // After fade-out (0.6s), show dice animation
   setTimeout(() => {
     diceContainer.innerHTML = `
     <iframe id="animation"
@@ -37,6 +37,8 @@ roll.addEventListener("click", function () {
 
     const iframe = document.getElementById("animation");
     iframe.style.opacity = "0";
+    roll.textContent = "Rolling";
+    roll.style.color = "white"
 
     setTimeout(() => {
       iframe.style.opacity = "1";
@@ -44,12 +46,13 @@ roll.addEventListener("click", function () {
 
     // After animation (~2.5 seconds), show dice result
     setTimeout(() => {
-      const random = Math.floor(Math.random() * 6) + 1; // random number 1–6
+      const random = Math.floor(Math.random() * 6); // random number 0–5
       diceContainer.innerHTML = `
           <img id="finalDice" src="${faces[random]}" class="fade size" alt="dice-${random}">
       `;
 
         display.textContent = `Dice value is ${random}`;
+        roll.textContent = "Roll"
         // Smooth fade-in for final dice
         const finalDice = document.getElementById("finalDice");
         finalDice.classList.add("show")
