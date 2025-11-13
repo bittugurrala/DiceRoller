@@ -29,8 +29,8 @@ roll.addEventListener("click", function () {
     <iframe id="animation"
         class="show"
         src="https://lottie.host/embed/bb25034b-41ea-4de8-9a84-5edd9ce91785/GF9M9vSDg9.lottie"
-        width="200"
-        height="200"
+        width="90%"
+        height="90%"
         frameborder="0">
     </iframe>
     `;
@@ -46,14 +46,16 @@ roll.addEventListener("click", function () {
     setTimeout(() => {
       const random = Math.floor(Math.random() * 6) + 1; // random number 1–6
       diceContainer.innerHTML = `
-        <img src="${faces[random]}" width="150" class="fade show size" alt="dice-${random}">`;
+          <img id="finalDice" src="${faces[random]}" class="fade size" alt="dice-${random}">
+      `;
+
         display.textContent = `Dice value is ${random}`;
         // Smooth fade-in for final dice
-        const finalDice = document.getElementById("finalDice");
+        const finalDice = document.getElementById("finalDice").classList.add("show");;
         setTimeout(() => {
             finalDice.classList.add("show");
         }, 50); 
-        }, 2500);
+        }, 2800);
 
     }, 100);
     display.textContent = "";
