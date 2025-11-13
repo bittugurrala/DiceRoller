@@ -51,7 +51,7 @@ roll.addEventListener("click", function () {
           <img id="finalDice" src="${faces[random]}" class="fade size" alt="dice-${random}">
       `;
 
-        display.textContent = `Dice value is ${random}`;
+        display.textContent = `Dice value is ${random+1}`;
         roll.textContent = "Roll"
         // Smooth fade-in for final dice
         const finalDice = document.getElementById("finalDice");
