@@ -46,7 +46,7 @@ roll.addEventListener("click", function () {
     setTimeout(() => {
       const random = Math.floor(Math.random() * 6) + 1; // random number 1–6
       diceContainer.innerHTML = `
-          <img id="finalDice" src="${faces[random]}" class="fade size" alt="dice-${random}">
+          <img id="finalDice" src="${faces[6]}" class="fade size" alt="dice-${random}">
       `;
 
         display.textContent = `Dice value is ${random}`;
