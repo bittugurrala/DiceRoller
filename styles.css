@@ -15,9 +15,9 @@ body{
 .dice-container {
     width: 90%;
     min-height: 500px;
-    max-width: 400px;      /* keeps card neat on laptop */
+    max-width: 400px;     
     max-height: 90vh;
-    aspect-ratio: auto;    /* optional */
+    aspect-ratio: auto;
 
     background: linear-gradient(135deg, #3A0CA3, #867BE2, #7209B7);
     border-radius: 20px;
@@ -25,7 +25,7 @@ body{
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* 🔥 distributes items evenly */
+    justify-content: space-between; 
     align-items: center;
 }
 .dice {
@@ -41,7 +41,7 @@ body{
 .dice iframe {
     max-height: 100%;
     max-width: 100%;
-    object-fit: contain;   /* prevents stretching or overflow */
+    object-fit: contain; 
 }
 
 
@@ -101,8 +101,10 @@ iframe.show {
   flex-direction: column;
 }
 #finalDice{
+
   width: 400px;
   height: 400px;
+  
 }
 #animation{
   width: 500px;
